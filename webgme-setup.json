@@ -1,0 +1,138 @@
+{
+  "components": {
+    "visualizers": {
+      "ViewNotebook": {
+        "src": "panels/ViewNotebook/ViewNotebookPanel",
+        "title": "ViewNotebook",
+        "panel": "src/visualizers/panels/ViewNotebook",
+        "secondary": false,
+        "widget": "src/visualizers/widgets/ViewNotebook"
+      }
+    },
+    "plugins": {
+      "SendGraphToJupyter": {
+        "src": "src/plugins/SendGraphToJupyter",
+        "test": "test/plugins/SendGraphToJupyter"
+      },
+      "UpdateGraphPositions": {
+        "src": "src/plugins/UpdateGraphPositions",
+        "test": "test/plugins/UpdateGraphPositions"
+      }
+    },
+    "routers": {},
+    "addons": {},
+    "decorators": {},
+    "layouts": {},
+    "seeds": {
+      "HFSM": {
+        "src": "src/seeds/HFSM"
+      },
+      "JupyterGraph": {
+        "src": "src/seeds/JupyterGraph"
+      }
+    }
+  },
+  "dependencies": {
+    "visualizers": {
+      "ICore": {
+        "src": "panels/ICore/ICorePanel",
+        "title": "ICore",
+        "panel": "src/visualizers/panels/ICore",
+        "secondary": false,
+        "widget": "src/visualizers/widgets/ICore",
+        "project": "webgme-icore"
+      },
+      "HFSMViz": {
+        "src": "panels/HFSMViz/HFSMVizPanel",
+        "title": "HFSMViz",
+        "panel": "src/visualizers/panels/HFSMViz",
+        "secondary": false,
+        "widget": "src/visualizers/widgets/HFSMViz",
+        "project": "webgme-hfsm"
+      },
+      "CodeEditor": {
+        "src": "panels/CodeEditor/CodeEditorPanel",
+        "title": "CodeEditor",
+        "panel": "src/visualizers/panels/CodeEditor",
+        "secondary": false,
+        "widget": "src/visualizers/widgets/CodeEditor",
+        "project": "webgme-codeeditor"
+      },
+      "BIPCodeEditor": {
+        "src": "panels/BIPCodeEditor/BIPCodeEditorPanel",
+        "title": "BIPCodeEditor",
+        "panel": "src/visualizers/panels/BIPCodeEditor",
+        "secondary": false,
+        "widget": "src/visualizers/widgets/BIPCodeEditor",
+        "project": "webgme-bip"
+      },
+      "BIPExecutionViz": {
+        "src": "panels/BIPExecutionViz/BIPExecutionVizPanel",
+        "title": "BIPExecutionViz",
+        "panel": "src/visualizers/panels/BIPExecutionViz",
+        "secondary": false,
+        "widget": "src/visualizers/widgets/BIPExecutionViz",
+        "project": "webgme-bip-editors"
+      }
+    },
+    "plugins": {
+      "PyCoreExecutor": {
+        "project": "webgme-icore",
+        "path": "node_modules/webgme-icore/src/plugins/PyCoreExecutor"
+      },
+      "SoftwareGenerator": {
+        "project": "webgme-hfsm",
+        "path": "node_modules/webgme-hfsm/src/plugins/SoftwareGenerator"
+      },
+      "JavaBIPEngine": {
+        "project": "webgme-bip",
+        "path": "node_modules/webgme-bip/src/plugins/JavaBIPEngine"
+      }
+    },
+    "routers": {
+      "BindingsDocs": {
+        "project": "webgme-bindings",
+        "path": "node_modules/webgme-bindings/src/routers/BindingsDocs",
+        "mount": "bindings-docs"
+      }
+    },
+    "addons": {},
+    "decorators": {
+      "LogicGatesDecorator": {
+        "project": "webgme-logic-gates",
+        "path": "node_modules/webgme-logic-gates/src/decorators/LogicGatesDecorator"
+      },
+      "UMLStateMachineDecorator": {
+        "project": "webgme-hfsm",
+        "path": "node_modules/webgme-hfsm/src/decorators/UMLStateMachineDecorator"
+      },
+      "UMLDecorator": {
+        "project": "webgme-hfsm",
+        "path": "node_modules/webgme-hfsm/src/decorators/UMLDecorator"
+      },
+      "BIPComponentTypeDecorator": {
+        "project": "webgme-bip",
+        "path": "node_modules/webgme-bip/src/decorators/BIPComponentTypeDecorator"
+      },
+      "BIPConnectorEndDecorator": {
+        "project": "webgme-bip",
+        "path": "node_modules/webgme-bip/src/decorators/BIPConnectorEndDecorator"
+      },
+      "BIPStateDecorator": {
+        "project": "webgme-bip",
+        "path": "node_modules/webgme-bip/src/decorators/BIPStateDecorator"
+      }
+    },
+    "layouts": {},
+    "seeds": {
+      "LogicGates": {
+        "project": "webgme-logic-gates",
+        "path": "node_modules/webgme-logic-gates/src/seeds/LogicGates"
+      },
+      "BIPv1": {
+        "project": "webgme-bip",
+        "path": "node_modules/webgme-bip/src/seeds/BIPv1"
+      }
+    }
+  }
+}

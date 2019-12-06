@@ -1,0 +1,22 @@
+{
+  "id": "UpdateGraphPositions",
+  "name": "UpdateGraphPositions",
+  "version": "0.1.0",
+  "description": "",
+  "icon": {
+    "class": "glyphicon glyphicon-cog",
+    "src": ""
+  },
+  "disableServerSideExecution": false,
+  "disableBrowserSideExecution": false,
+  "dependencies": [],
+  "writeAccessRequired": true,
+  "configStructure": [{
+    "name": "positions",
+    "displayName": "Coordinates",
+    "description": "Stringified JSON of x,y coordinates keyed by the name of the nodes",
+    "value": "",
+    "valueType": "string",
+    "readOnly": false
+  }]
+}

@@ -1,0 +1,34 @@
+# Build a and run docker image for this repository
+# 1. make sure docker is installed
+# 2. make sure you have a clean copy of this repository
+# 3. go to the directory where this file exists (the root of your repo)
+# 4. $ docker build -t webgme-py-core-executor -f DockerfilePyCoreExecutor .
+
+# Node 10
+FROM node:dubnium
+MAINTAINER Patrik Meijer <patrik.meijer@vanderbilt.edu>
+
+RUN apt-get update
+
+RUN apt-get install -y python3-pip python3-dev \
+  && cd /usr/local/bin \
+  && ln -s /usr/bin/python3 python \
+  && pip3 install --upgrade pip
+
+RUN pip3 install webgme-bindings
+
+RUN pip3 install jinja2
+RUN pip3 install networkx
+RUN pip3 install mako
+
+RUN mkdir /usr/app
+
+WORKDIR /usr/app
+
+# copy app source
+ADD . /usr/app/
+
+# Install node-modules
+RUN npm install
+
+RUN cp /usr/app/node_modules/webgme-docker-worker-manager/dockerworker.js /usr/app/dockerworker.js

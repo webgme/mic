@@ -1,0 +1,53 @@
+{
+    "cells": [
+        {
+            "cell_type": "code",
+            "execution_count": 0,
+            "metadata": {},
+            "outputs": [],
+            "source": [
+                "import json\n",
+                "import networkx as nx\n",
+                "import requests\n",
+                "import warnings\n",
+                "warnings.filterwarnings('ignore')\n","\n",
+                "def send_to_webgme(coordinates):\n",
+                "  token  = <%-token%>\n",
+                "  pos_json = {}\n",
+                "  payload = {}\n",
+                "  payload['activeNode'] = '<%=path%>'\n",
+                "  payload['projectId'] = '<%=projectId%>'\n",
+                "  payload['branchName'] = '<%=branchName%>'\n",
+                "  payload['pluginConfig'] = {}\n",
+                "  offset = 200\n",
+                "  for element in coordinates:\n",
+                "    pos_json[element] = {}\n",
+                "    pos_json[element]['x'] = offset + round(coordinates[element][0])\n",
+                "    pos_json[element]['y'] = offset + round(coordinates[element][1])\n",
+                "  payload['pluginConfig']['positions'] = json.dumps(pos_json)\n",
+                "  if token:\n",
+                "    token = '?token='+token\n",
+                "  else:\n",
+                "    token = ''\n",
+                "  r = requests.post('http://webgme-server:8888/api/plugins/UpdateGraphPositions/run'+token, json=payload)\n",
+                "  return r\n","\n",
+                "G = nx.Graph()\n",
+<% for(let i = 0; i<nodes.length; i+=1) {
+  %>"G.add_node('<%=nodes[i].name%>',id='<%=nodes[i].id%>')\n",
+<%
+}
+for(let i = 0; i<edges.length; i+=1) {
+    %>"G.add_edge('<%=edges[i].from%>','<%=edges[i].to%>')\n",
+<%
+}
+%>
+                "nx.draw_planar(G)"
+            ]
+        },
+        { "cell_type":"code","execution_count":1,"metadata":{},"outputs":[],"source":["nx.draw_planar(G,with_labels=True)"]},
+        { "cell_type":"code","execution_count":1,"metadata":{},"outputs":[],"source":["response = send_to_webgme(nx.planar_layout(G,scale=100))"]}
+    ],
+    "metadata": {},
+    "nbformat": 4,
+    "nbformat_minor": 2
+}

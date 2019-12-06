@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ICore",
+    "title": "ICore",
+    "panel": "panels/ICore/ICorePanel",
+    "DEBUG_ONLY": false
+  },
+  {
+    "id": "HFSMViz",
+    "title": "HFSMViz",
+    "panel": "panels/HFSMViz/HFSMVizPanel",
+    "DEBUG_ONLY": false
+  },
+  {
+    "id": "CodeEditor",
+    "title": "CodeEditor",
+    "panel": "panels/CodeEditor/CodeEditorPanel",
+    "DEBUG_ONLY": false
+  },
+  {
+    "id": "BIPCodeEditor",
+    "title": "BIPCodeEditor",
+    "panel": "panels/BIPCodeEditor/BIPCodeEditorPanel",
+    "DEBUG_ONLY": false
+  },
+  {
+    "id": "BIPExecutionViz",
+    "title": "BIPExecutionViz",
+    "panel": "panels/BIPExecutionViz/BIPExecutionVizPanel",
+    "DEBUG_ONLY": false
+  },
+  {
+    "id": "ViewNotebook",
+    "title": "ViewNotebook",
+    "panel": "panels/ViewNotebook/ViewNotebookPanel",
+    "DEBUG_ONLY": false
+  }
+]
