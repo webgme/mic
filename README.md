@@ -8,16 +8,16 @@ To install the Studio and all of its tools, the user needs a machine with [Docke
 - ```docker-compose build```
 - ```docker-compose up -d```
 
-This should start every containers and the Studio should be available at the port 443 (https).
+This should start every container and the Studio should be available at the port 443 (https).
 ## Containers
-The system are built up of the following containers:
+The system is composed of the following containers:
 - __web__ this container runs the nginx reverse proxy and supposed to provide secure connection to the world
 - __webgme-server__ contains the actual webgme application with all the additional UI and domain elements
 - __mongo__ is the mongoDB server holding all project and user information
 - __py-core-executor__ container is an on demand container that is cloned whenever a plugin should be executed as the plugins are managed by a docker-worker-manager
 - __jupyter__ container runs the jupyter server that is used by the ViewNotebook visualizer to show the generated notebooks
 ## Components
-Here is the list of the components made specificly in this Design Studio:
+Here is the list of the components made specifically in this Design Studio:
 - __ViewNotebook__ is a visualizer that uses an iframe to show the Jupyter notebook attached to the project (by its unique id). Whenever there is no prepared notebook, it notifies the user to call the proper plugin to generate the notebook. To properly use this visualizer, the user could start by using the __JupyterGraph__ seed.
 - __JupyterGraph__ seed is a simple graph domain that has the visualizers and plugins configured, so the user can start easily with Jupyter notebook cooperation scenarios.
 - __SendGraphToJupyter__ plugin generates a jupyter notebook and send uploads it to the server, after successfull execution, the __ViewNotebook__ visualizer is functional.
