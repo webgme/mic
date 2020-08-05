@@ -20,16 +20,6 @@ networks:
     internal: true
     driver: bridge
 services:
-  web:
-    build:
-      context: .
-      dockerfile: DockerfileNginxLocal
-    depends_on:
-      - webgme-server
-    networks:
-      - frontend
-    ports:
-      - 8888:8888
   webgme-server:
     build:
       context: .
@@ -43,23 +33,25 @@ services:
     - database
     - workers
     - frontend
+    ports:
+      - 8888:8888
   mongo:
     image: mongo:3.4.1
     expose:
     - 27017
     networks:
     - database
-  py-core-executor:
-    build:
-      context: .
-      dockerfile: DockerfilePyCoreExecutor
-    depends_on:
-    - webgme-server
-    networks:
-    - workers
-    environment:
-    - NODE_ENV=docker
-    command: ["cat", "/dev/null"] # A no-op command so the image is built.
+  #py-core-executor:
+  #  build:
+  #    context: .
+  #    dockerfile: DockerfilePyCoreExecutor
+  #  depends_on:
+  #  - webgme-server
+  #  networks:
+  #  - workers
+  #  environment:
+  #  - NODE_ENV=docker
+  #  command: ["cat", "/dev/null"] # A no-op command so the image is built.
   jupyter:
     build:
       context: .

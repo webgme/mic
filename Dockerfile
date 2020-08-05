@@ -21,8 +21,19 @@
 # Node 10
 FROM node:dubnium
 MAINTAINER Patrik Meijer <patrik.meijer@vanderbilt.edu>
-RUN apt-get update
-RUN apt-get install -y git
+RUN apt-get update && \
+    apt-get install -y git\
+        python \
+        python-pip \
+        python3-pip \
+        python-setuptools
+
+RUN pip install webgme_bindings
+
+RUN pip3 install webgme-bindings
+RUN pip3 install jinja2
+RUN pip3 install networkx
+RUN pip3 install mako
 
 RUN mkdir /usr/app
 
