@@ -35,3 +35,4 @@ blob-local-storage/
 
 #package-lock
 package-lock.json
+test.py
