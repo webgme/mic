@@ -34,5 +34,11 @@
     "title": "ViewNotebook",
     "panel": "panels/ViewNotebook/ViewNotebookPanel",
     "DEBUG_ONLY": false
+  },
+  {
+    "id": "HierarchicalModelEditor",
+    "title": "HierarchicalModelEditor",
+    "panel": "panels/HierarchicalModelEditor/HierarchicalModelEditorPanel",
+    "DEBUG_ONLY": false
   }
 ]

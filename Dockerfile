@@ -23,6 +23,7 @@ FROM node:dubnium
 MAINTAINER Patrik Meijer <patrik.meijer@vanderbilt.edu>
 RUN apt-get update && \
     apt-get install -y git\
+        apt-transport-https \
         python \
         python-pip \
         python3-pip \
@@ -44,5 +45,14 @@ ADD . /usr/app/
 
 # Install node-modules
 RUN npm install
+
+# now we try to add formula and the required environment
+RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+RUN dpkg -i packages-microsoft-prod.deb
+
+RUN apt-get update; \
+  apt-get install -y apt-transport-https && \
+  apt-get update && \
+  apt-get install -y dotnet-sdk-3.1
 
 CMD ["npm", "start"]

@@ -73,6 +73,14 @@
         "secondary": false,
         "widget": "src/visualizers/widgets/BIPExecutionViz",
         "project": "webgme-bip-editors"
+      },
+      "HierarchicalModelEditor": {
+        "src": "panels/HierarchicalModelEditor/HierarchicalModelEditorPanel",
+        "title": "HierarchicalModelEditor",
+        "panel": "src/visualizers/panels/HierarchicalModelEditor",
+        "secondary": false,
+        "widget": "src/visualizers/widgets/HierarchicalModelEditor",
+        "project": "hierarchical-model-editor"
       }
     },
     "plugins": {

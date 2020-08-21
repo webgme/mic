@@ -26,6 +26,7 @@ config.visualization.panelPaths.push(__dirname + '/../node_modules/webgme-hfsm/s
 config.visualization.panelPaths.push(__dirname + '/../node_modules/webgme-codeeditor/src/visualizers/panels');
 config.visualization.panelPaths.push(__dirname + '/../node_modules/webgme-bip/src/visualizers/panels');
 config.visualization.panelPaths.push(__dirname + '/../node_modules/webgme-bip-editors/src/visualizers/panels');
+config.visualization.panelPaths.push(__dirname + '/../node_modules/hierarchical-model-editor/src/visualizers/panels');
 config.visualization.panelPaths.push(__dirname + '/../src/visualizers/panels');
 
 
@@ -51,6 +52,7 @@ config.requirejsPaths = {
   'JavaBIPEngine': 'node_modules/webgme-bip/src/plugins/JavaBIPEngine',
   'SoftwareGenerator': 'node_modules/webgme-hfsm/src/plugins/SoftwareGenerator',
   'PyCoreExecutor': 'node_modules/webgme-icore/src/plugins/PyCoreExecutor',
+  'HierarchicalModelEditor': 'panels/HierarchicalModelEditor/HierarchicalModelEditorPanel',
   'BIPExecutionViz': 'panels/BIPExecutionViz/BIPExecutionVizPanel',
   'BIPCodeEditor': 'panels/BIPCodeEditor/BIPCodeEditorPanel',
   'CodeEditor': 'panels/CodeEditor/CodeEditorPanel',
@@ -58,6 +60,8 @@ config.requirejsPaths = {
   'ICore': 'panels/ICore/ICorePanel',
   'panels': './src/visualizers/panels',
   'widgets': './src/visualizers/widgets',
+  'panels/HierarchicalModelEditor': './node_modules/hierarchical-model-editor/src/visualizers/panels/HierarchicalModelEditor',
+  'widgets/HierarchicalModelEditor': './node_modules/hierarchical-model-editor/src/visualizers/widgets/HierarchicalModelEditor',
   'panels/BIPExecutionViz': './node_modules/webgme-bip-editors/src/visualizers/panels/BIPExecutionViz',
   'widgets/BIPExecutionViz': './node_modules/webgme-bip-editors/src/visualizers/widgets/BIPExecutionViz',
   'panels/BIPCodeEditor': './node_modules/webgme-bip/src/visualizers/panels/BIPCodeEditor',
@@ -73,6 +77,7 @@ config.requirejsPaths = {
   'webgme-codeeditor': './node_modules/webgme-codeeditor/src/common',
   'webgme-bip': './node_modules/webgme-bip/src/common',
   'webgme-bip-editors': './node_modules/webgme-bip-editors/src/common',
+  'hierarchical-model-editor': './node_modules/hierarchical-model-editor/src/common',
   'webgme-bindings': './node_modules/webgme-bindings/src/common',
   'webgme-logic-gates': './node_modules/webgme-logic-gates/src/common',
   'webgme-mic': './src/common'

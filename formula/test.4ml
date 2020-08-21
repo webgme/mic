@@ -1,0 +1,27 @@
+domain MoreMoney
+{
+   Problem ::= new (s: { 1..9 }, e: { 0..9 }, n: { 0..9 }, d: { 0..9 }, 
+                    m: { 1..9 }, o: { 0..9 }, r: { 0..9 }, y: { 0..9 }).
+                
+   conforms 
+           p is Problem,
+             (1000*p.s) + (100*p.e) + (10*p.n) + p.d
+           + (1000*p.m) + (100*p.o) + (10*p.r) + p.e
+           = (10000*p.m) + (1000*p.o) + (100*p.n) + (10*p.e) + p.y.
+           
+   conforms no { x | val(x,y), val(x,z), y != z }.   
+     
+   val ::= ({ 0..9 }, { 0..9 }).                               
+   val(p.s,0), val(p.e,1), val(p.n,2), val(p.d,3),
+   val(p.m,4), val(p.o,5), val(p.r,6), val(p.y,7) :- p is Problem.   
+}
+
+partial model Problem of MoreMoney
+{
+   requires atleast 1 Problem.
+}
+
+model Solution of MoreMoney
+{
+  Problem(9,5,6,7,1,0,8,2).
+}

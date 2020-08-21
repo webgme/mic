@@ -1,0 +1,52 @@
+domain StateMachines
+{
+	State ::= new (name: String).
+    Init ::= new (state: State).
+    End ::= new (state: State).
+    Transition ::= new (src: State, dst: State).
+    Reachable ::= (from: State, to: State).
+    Reachable(x, y) :- Transition(x, y).
+    Reachable(x, y) :- z is State, Reachable(x, z), Transition(z, y).
+    NotReachable ::= (from: State, to: State).
+    NotReachable(x, y) :- x is State, y is State, no Reachable(x, y).
+    
+    conforms e is End, no NotReachable(_, e.state).
+    conforms i is Init, no NotReachable(i.state, _).
+}
+
+model SodaMachine of StateMachines
+{
+  S2_2 is State("S2_2").
+  s0 is State("s0").
+  Init(s0).
+  S1 is State("S1").
+  S2 is State("S2").
+  S2_1 is State("S2_1").
+  S3 is State("S3").
+  S4 is State("S4").
+  End(S4).
+  Transition(S2, S1).
+  Transition(S3, S2_1).
+  Transition(S3, S2_2).
+  Transition(S3, S3).
+  Transition(S3, S3).
+  Transition(S2_2, S2_2).
+  Transition(S2, S2).
+  Transition(s0, S1).
+  Transition(S2_1, S2_1).
+  Transition(S1, S2).
+  Transition(S2_2, S1).
+  Transition(S2_1, S1).
+  Transition(S3, S1).
+  Transition(S3, S4).
+  Transition(S2_1, S3).
+  Transition(S1, S1).
+  Transition(S2_2, S2).
+  Transition(S2, S2_2).
+  Transition(S1, S1).
+  Transition(S1, S1).
+  Transition(S2_2, S3).
+  Transition(S2_1, S2).
+  Transition(S2, S2_1).
+  Transition(S2_1, S2_1).
+}
