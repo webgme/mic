@@ -10,7 +10,7 @@ MAINTAINER Patrik Meijer <patrik.meijer@vanderbilt.edu>
 
 RUN apt-get update
 
-RUN apt-get install -y python3-pip python3-dev \
+RUN apt-get install -y python3-pip python3-dev  apt-transport-https \
   && cd /usr/local/bin \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
