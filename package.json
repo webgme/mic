@@ -20,6 +20,7 @@
     "chai": "^3.0.0"
   },
   "dependencies": {
+    "comif-hems": "github:kecso/comif-hems",
     "hierarchical-model-editor": "webgme/hierarchical-model-editor#243eec7ec2",
     "webgme": "^2.39.0",
     "webgme-bindings": "^1.0.0",

@@ -95,6 +95,10 @@
       "JavaBIPEngine": {
         "project": "webgme-bip",
         "path": "node_modules/webgme-bip/src/plugins/JavaBIPEngine"
+      },
+      "ToFormula": {
+        "project": "comif-hems",
+        "path": "node_modules/comif-hems/src/plugins/ToFormula"
       }
     },
     "routers": {

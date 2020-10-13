@@ -11,6 +11,7 @@ config.plugin.basePaths.push(__dirname + '/../src/plugins');
 config.plugin.basePaths.push(__dirname + '/../node_modules/webgme-icore/src/plugins');
 config.plugin.basePaths.push(__dirname + '/../node_modules/webgme-hfsm/src/plugins');
 config.plugin.basePaths.push(__dirname + '/../node_modules/webgme-bip/src/plugins');
+config.plugin.basePaths.push(__dirname + '/../node_modules/comif-hems/src/plugins');
 config.visualization.decoratorPaths.push(__dirname + '/../node_modules/webgme-logic-gates/src/decorators');
 config.visualization.decoratorPaths.push(__dirname + '/../node_modules/webgme-hfsm/src/decorators');
 config.visualization.decoratorPaths.push(__dirname + '/../node_modules/webgme-bip/src/decorators');
@@ -49,6 +50,7 @@ config.requirejsPaths = {
   'UMLStateMachineDecorator': 'node_modules/webgme-hfsm/src/decorators/UMLStateMachineDecorator',
   'LogicGatesDecorator': 'node_modules/webgme-logic-gates/src/decorators/LogicGatesDecorator',
   'BindingsDocs': 'node_modules/webgme-bindings/src/routers/BindingsDocs',
+  'ToFormula': 'node_modules/comif-hems/src/plugins/ToFormula',
   'JavaBIPEngine': 'node_modules/webgme-bip/src/plugins/JavaBIPEngine',
   'SoftwareGenerator': 'node_modules/webgme-hfsm/src/plugins/SoftwareGenerator',
   'PyCoreExecutor': 'node_modules/webgme-icore/src/plugins/PyCoreExecutor',
@@ -78,6 +80,7 @@ config.requirejsPaths = {
   'webgme-bip': './node_modules/webgme-bip/src/common',
   'webgme-bip-editors': './node_modules/webgme-bip-editors/src/common',
   'hierarchical-model-editor': './node_modules/hierarchical-model-editor/src/common',
+  'comif-hems': './node_modules/comif-hems/src/common',
   'webgme-bindings': './node_modules/webgme-bindings/src/common',
   'webgme-logic-gates': './node_modules/webgme-logic-gates/src/common',
   'webgme-mic': './src/common'
