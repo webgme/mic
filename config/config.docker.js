@@ -27,9 +27,11 @@ config.authentication.jwt.privateKey = '/token_keys/private_key';
 config.authentication.jwt.publicKey = '/token_keys/public_key';
 
 config.authentication.adminAccount = 'admin:admin';
-config.authentication.publicOrganizations = ['MIC19'];
+config.authentication.publicOrganizations = ['MIC21'];
 
 config.blob.fsDir = '/blob-local-storage';
+
+config.api.useEnhancedStarterPage = true;
 
 
 validateConfig(config);
