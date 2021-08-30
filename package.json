@@ -28,7 +28,7 @@
     "webgme-bip-editors": "^0.3.0",
     "webgme-codeeditor": "^3.6.19",
     "webgme-docker-worker-manager": "^0.3.1",
-    "webgme-hfsm": "github:finger563/webgme-hfsm#bower_fix",
+    "webgme-hfsm": "github:finger563/webgme-hfsm",
     "webgme-icore": "github:webgme/icore#extra_python_modules",
     "webgme-logic-gates": "^1.0.2",
     "webgme-ui-replay": "^0.1.1"
