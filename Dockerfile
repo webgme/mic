@@ -18,19 +18,12 @@
 # import an image:                                  docker load -i webgme-server.tar
 
 
-# Node 10
-FROM node:dubnium
-MAINTAINER Patrik Meijer <patrik.meijer@vanderbilt.edu>
-RUN apt-get update && \
-    apt-get install -y git\
-        apt-transport-https \
-        python \
-        python-pip \
-        python3-pip \
-        python-setuptools
+# Node 20
+FROM node:20-alpine
+MAINTAINER Tamas Kecskes <tamas.kecskes@vanderbilt.edu>
 
-RUN pip install webgme_bindings
-
+RUN apk update
+RUN apk add --no-cache make g++ git python3 py3-pip py3-setuptools dotnet6-sdk
 RUN pip3 install webgme-bindings
 RUN pip3 install jinja2
 RUN pip3 install networkx
@@ -44,15 +37,7 @@ WORKDIR /usr/app
 ADD . /usr/app/
 
 # Install node-modules
-RUN npm install
-
-# now we try to add formula and the required environment
-RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-RUN dpkg -i packages-microsoft-prod.deb
-
-RUN apt-get update; \
-  apt-get install -y apt-transport-https && \
-  apt-get update && \
-  apt-get install -y dotnet-sdk-3.1
+RUN npm cache clean --force
+RUN npm install --force --no-package-lock
 
 CMD ["npm", "start"]
