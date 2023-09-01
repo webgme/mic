@@ -1,0 +1,5 @@
+FROM webgme/mic:latest
+
+COPY config/config.docker.js /usr/app/config
+
+CMD ["npm", "start"]

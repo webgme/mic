@@ -23,6 +23,6 @@ WORKDIR /usr/app
 ADD . /usr/app/
 
 # Install node-modules
-RUN npm install
+RUN npm install --force --no-package-lock
 
 RUN cp /usr/app/node_modules/webgme-docker-worker-manager/dockerworker.js /usr/app/dockerworker.js
