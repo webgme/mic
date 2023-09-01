@@ -35,6 +35,7 @@ services:
       - 443:443
   webgme-server:
     build:
+      dockerfile: DockerfileDeployed
       context: .
     depends_on:
     - mongo
