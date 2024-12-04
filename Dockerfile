@@ -24,10 +24,7 @@ MAINTAINER Tamas Kecskes <tamas.kecskes@vanderbilt.edu>
 
 RUN apk update
 RUN apk add --no-cache make g++ git python3 py3-pip py3-setuptools dotnet6-sdk
-RUN pip3 install webgme-bindings
-RUN pip3 install jinja2
-RUN pip3 install networkx
-RUN pip3 install mako
+RUN pip3 install --break-system-packages webgme-bindings jinja2 networkx mako
 
 RUN mkdir /usr/app
 
@@ -38,6 +35,6 @@ ADD . /usr/app/
 
 # Install node-modules
 RUN npm cache clean --force
-RUN npm install --force --no-package-lock
+RUN npm i
 
 CMD ["npm", "start"]
