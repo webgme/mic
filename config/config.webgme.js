@@ -19,9 +19,11 @@ config.seedProjects.basePaths.push(__dirname + '/../src/seeds/HFSM');
 config.seedProjects.basePaths.push(__dirname + '/../src/seeds/JupyterGraph');
 config.seedProjects.basePaths.push(__dirname + '/../node_modules/webgme-logic-gates/src/seeds/LogicGates');
 config.seedProjects.basePaths.push(__dirname + '/../node_modules/webgme-bip/src/seeds/BIPv1');
+config.seedProjects.basePaths.push(__dirname + '/../node_modules/webgme-reactflow/src/seeds/ClassDiagram');
 
 
 
+config.visualization.panelPaths.push(__dirname + '/../node_modules/webgme-reactflow/src/visualizers/panels');
 config.visualization.panelPaths.push(__dirname + '/../node_modules/webgme-icore/src/visualizers/panels');
 config.visualization.panelPaths.push(__dirname + '/../node_modules/webgme-hfsm/src/visualizers/panels');
 config.visualization.panelPaths.push(__dirname + '/../node_modules/webgme-codeeditor/src/visualizers/panels');
@@ -83,7 +85,10 @@ config.requirejsPaths = {
   'comif-hems': './node_modules/comif-hems/src/common',
   'webgme-bindings': './node_modules/webgme-bindings/src/common',
   'webgme-logic-gates': './node_modules/webgme-logic-gates/src/common',
-  'webgme-mic': './src/common'
+  'webgme-mic': './src/common',
+  'reactflow': './node_modules/webgme-reactflow/src/common',
+  'panels/FlowClassDiagram': './node_modules/webgme-reactflow/src/visualizers/panels/FlowClassDiagram',
+  'panels/FlowList': './node_modules/webgme-reactflow/src/visualizers/panels/FlowList'
 };
 
 

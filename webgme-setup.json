@@ -34,6 +34,22 @@
   },
   "dependencies": {
     "visualizers": {
+      "FlowClassDiagram": {
+        "src": "panels/FlowClassDiagram/FlowClassDiagramPanel",
+        "title": "FlowClassDiagram",
+        "panel": "src/visualizers/panels/FlowClassDiagram",
+        "secondary": false,
+        "widget": "src/common/bundles/FlowClassDiagramWidget.bundle",
+        "project": "webgme-reactflow"
+      },
+      "FlowList": {
+        "src": "panels/FlowList/FlowListPanel",
+        "title": "FlowList",
+        "panel": "src/visualizers/panels/FlowList",
+        "secondary": false,
+        "widget": "src/common/bundles/FlowListWidget.bundle",
+        "project": "webgme-reactflow"
+      },
       "ICore": {
         "src": "panels/ICore/ICorePanel",
         "title": "ICore",
@@ -140,6 +156,10 @@
       "LogicGates": {
         "project": "webgme-logic-gates",
         "path": "node_modules/webgme-logic-gates/src/seeds/LogicGates"
+      },
+      "ClassDiagram": {
+        "project": "webgme-reactflow",
+        "path": "node_modules/webgme-reactflow/src/seeds/ClassDiagram"
       },
       "BIPv1": {
         "project": "webgme-bip",

@@ -1,5 +1,17 @@
 [
   {
+    "id": "FlowClassDiagram",
+    "title": "Class Diagram Editor",
+    "panel": "panels/FlowClassDiagram/FlowClassDiagramPanel",
+    "DEBUG_ONLY": false
+  },
+  {
+    "id": "FlowList",
+    "title": "DiagramList",
+    "panel": "panels/FlowList/FlowListPanel",
+    "DEBUG_ONLY": false
+  },
+  {
     "id": "ICore",
     "title": "ICore",
     "panel": "panels/ICore/ICorePanel",

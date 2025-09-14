@@ -30,6 +30,7 @@
     "webgme-docker-worker-manager": "^0.3.1",
     "webgme-hfsm": "github:finger563/webgme-hfsm",
     "webgme-icore": "github:webgme/icore#extra_python_modules",
+    "webgme-reactflow": "github:webgme/ReactFlow",
     "webgme-logic-gates": "^1.0.2",
     "webgme-ui-replay": "^0.1.1"
   }
